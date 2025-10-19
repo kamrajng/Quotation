@@ -1,0 +1,650 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Development Quotation - Kamraj Empresa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+        
+        .header .company-name {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+            opacity: 0.95;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 1em;
+            opacity: 0.85;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-item strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-item span {
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        .scope-list {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .scope-category {
+            margin-bottom: 20px;
+        }
+        
+        .scope-category h3 {
+            color: #1e3c72;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .scope-category ul {
+            margin-left: 20px;
+        }
+        
+        .scope-category li {
+            margin-bottom: 6px;
+            color: #555;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .pricing-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .pricing-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+        
+        .pricing-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .pricing-table tbody tr:hover {
+            background: #f8f9fa;
+            transition: background 0.3s;
+        }
+        
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .item-name {
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #667eea;
+            text-align: right;
+            font-size: 1.1em;
+        }
+        
+        .total-row {
+            background: #1e3c72 !important;
+            color: white !important;
+            font-size: 1.3em;
+        }
+        
+        .total-row td {
+            padding: 20px 15px !important;
+            font-weight: bold;
+            border-bottom: none !important;
+        }
+        
+        .timeline-box {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-left: 4px solid #00acc1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .timeline-box h3 {
+            color: #006064;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-box p {
+            color: #00838f;
+            font-size: 1.05em;
+        }
+        
+        .payment-terms {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .payment-terms h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .payment-terms ul {
+            margin-left: 20px;
+            color: #ef6c00;
+        }
+        
+        .payment-terms li {
+            margin-bottom: 8px;
+        }
+        
+        .notes {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .notes h3 {
+            color: #6a1b9a;
+            margin-bottom: 10px;
+        }
+        
+        .notes ul {
+            margin-left: 20px;
+            color: #7b1fa2;
+        }
+        
+        .notes li {
+            margin-bottom: 8px;
+        }
+        
+        .templates-intro {
+            margin-bottom: 25px;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .template-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .template-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .template-card h3 {
+            color: #1e3c72;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            margin-top: 10px;
+        }
+        
+        .template-url {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .template-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-tag {
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            color: #00838f;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .template-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .template-note {
+            background: #f3e5f5;
+            border-left: 4px solid #9c27b0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .template-note p {
+            color: #7b1fa2;
+            margin: 0;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            border-top: 3px solid #667eea;
+        }
+        
+        .footer h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        
+        .contact-item a {
+            color: #1e3c72;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #667eea;
+        }
+        
+        .signature-box {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .pricing-table {
+                font-size: 0.85em;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 10px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>QUOTATION</h1>
+            <div class="company-name">Kamraj Empresa</div>
+            <p>Static Business Consulting Website Development & Setup</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Sample Website Templates</h2>
+                <div class="templates-intro">
+                    <p style="color: #555; margin-bottom: 20px;">Your website will be custom-designed with inspiration from these professional consulting websites, tailored to match your brand identity and business goals.</p>
+                </div>
+                
+                <div class="templates-grid">
+                    <div  class="template-card">
+                        <div class="template-number">1</div>
+                        <h3>FourFold Consulting</h3>
+                        <a href="http://fourfoldconsulting.com.au" class="template-url">fourfoldconsulting.com.au</a>
+                        <div class="template-features">
+                            <span class="feature-tag">Clean & Professional</span>
+                            <span class="feature-tag">Service Focus</span>
+                            <span class="feature-tag">Team Showcase</span>
+                        </div>
+                        <p class="template-description">Modern, thoughtful design with clear service sections, strong value proposition, and professional imagery. Perfect for strategy and leadership consulting.</p>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-number">2</div>
+                        <h3>S Kaba Consulting</h3>
+                        <a href="http://skabaconsulting.com" class="template-url">skabaconsulting.com</a>
+                        <div class="template-features">
+                            <span class="feature-tag">Bold Headlines</span>
+                            <span class="feature-tag">Experience-Driven</span>
+                            <span class="feature-tag">Trust Building</span>
+                        </div>
+                        <p class="template-description">Engaging hero section with strong messaging, emphasis on expertise and experience. Ideal for specialized consulting services.</p>
+                    </div>
+                    
+                    <div class="template-card">
+                        <div class="template-number">3</div>
+                        <h3>Bain & Company</h3>
+                        <a href="http://skabaconsulting.com" class="template-url">bain.com</a>
+                        <div class="template-features">
+                            <span class="feature-tag">Premium Design</span>
+                            <span class="feature-tag">Insights-Led</span>
+                            <span class="feature-tag">Global Appeal</span>
+                        </div>
+                        <p class="template-description">Enterprise-level design with sophisticated layouts, insights showcase, and strong calls-to-action. Perfect for established consulting firms.</p>
+                    </div>
+                </div>
+                
+                <div class="template-note">
+                    <p><strong>Note:</strong> Your final website will incorporate the best design elements from these templates while maintaining your unique brand identity, messaging, and business requirements.</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Project Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Client:</strong>
+                        <span>Mr. Bolaji</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Service Provider:</strong>
+                        <span>Kamraj Empresa</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Date:</strong>
+                        <span>October 19, 2025</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Validity:</strong>
+                        <span>14 Days</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Scope of Work</h2>
+                <div class="scope-list">
+                    <div class="scope-category">
+                        <h3>Website Design & Development</h3>
+                        <ul>
+                            <li>Custom-designed static website (up to 7 pages: Home, About, Services, Team, Contact, etc.)</li>
+                            <li>Mobile-friendly (responsive) layout</li>
+                            <li>SEO-friendly basic setup</li>
+                            <li>Fast-loading and secure</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="scope-category">
+                        <h3>Domain Name Registration</h3>
+                        <ul>
+                            <li>(.com / .com.ng / .ng) domain for 1 year</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="scope-category">
+                        <h3>Web Hosting</h3>
+                        <ul>
+                            <li>1-year premium hosting plan</li>
+                            <li>99.9% uptime guarantee</li>
+                            <li>SSL certificate included</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="scope-category">
+                        <h3>Business Email Setup</h3>
+                        <ul>
+                            <li>Up to 5 professional email addresses (e.g., info@yourdomain.com, support@yourdomain.com)</li>
+                            <li>Email configuration and support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Pricing Breakdown (USD)</h2>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th style="text-align: right;">Cost (USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="item-name">Website Design & Development</td>
+                            <td>Static responsive website (up to 7 pages)</td>
+                            <td class="price">$350</td>
+                        </tr>
+                        <tr>
+                            <td class="item-name">Domain Registration</td>
+                            <td>1-year (.com or .com.ng)</td>
+                            <td class="price">$25</td>
+                        </tr>
+                        <tr>
+                            <td class="item-name">Web Hosting</td>
+                            <td>1-year premium hosting (SSL included)</td>
+                            <td class="price">$85</td>
+                        </tr>
+                        <tr>
+                            <td class="item-name">Business Email Setup</td>
+                            <td>Up to 5 emails</td>
+                            <td class="price">$50</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2">TOTAL ESTIMATE</td>
+                            <td style="text-align: right;">$510</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="section">
+                <div class="timeline-box">
+                    <h3>Delivery Timeline</h3>
+                    <p><strong>Estimated completion:</strong> 10-14 working days after content submission and 50% initial payment.</p>
+                </div>
+                
+                <div class="payment-terms">
+                    <h3>Payment Terms</h3>
+                    <ul>
+                        <li><strong>50% upfront</strong> to start project</li>
+                        <li><strong>50% upon completion</strong> and approval</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="notes">
+                <h3>Additional Notes</h3>
+                <ul>
+                    <li>Extra pages beyond 7: <strong>$20 per page</strong></li>
+                    <li>Domain and hosting renewal after 1 year billed separately</li>
+                    <li>Optional website maintenance available</li>
+                </ul>
+            </div>
+            
+            <div class="signature-box">
+                <p><strong>Thank you for considering Kamraj Empresa for your web development needs!</strong></p>
+                <p>We look forward to bringing your vision to life.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Service Provider</strong>
+                    Kamraj Empresa
+                </div>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+2348160746670">+234 816 074 6670</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:kamrajempresa@gmail.com">kamrajempresa@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
